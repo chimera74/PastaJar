@@ -1,0 +1,239 @@
+.pj-main-frame {
+	
+	position:absolute;
+	
+	background:white;
+	border: 2px solid #4b367c;
+	z-index: 5000;
+
+	display: flex;
+	flex-flow: column;
+}
+
+.pj-window-header {
+	height: 24px;
+	border-bottom: 1px dashed #454545;
+	padding: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	flex: 0 0 auto;
+}
+
+.pj-header-text-container {
+	flex-grow: 1;
+	text-align: center;
+}
+
+.pj-header-button {
+	/*width: 32px;*/
+	/*height: 32px;*/
+}
+
+.pj-storage-button {
+	border-radius: 50%;
+	background-color: #ffffff;
+	margin-right: 5px;
+
+}
+
+.pj-storedelement-container {
+	position: relative;
+	padding: 5px 5px;
+	overflow: hidden;
+}
+
+.pj-storedelement-text img,
+#pj-preview-container img {
+	vertical-align: middle;
+}
+
+.pj-storedelement-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-end;
+
+	background-color: rgba(0,0,0,0.4);
+}
+
+.pj-storage-frame {
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-flow: column;
+	overflow: hidden;
+}
+
+.pj-storage-container {
+	height: 150px;
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.pj-storage-container > div {
+	border-top: 1px dotted #454545;
+}
+
+.pj-storage-container > div:first-child:not(.ui-sortable-helper) {
+	border-top: none;
+}
+
+.pj-storage-container::-webkit-scrollbar,
+#pj-preview-container::-webkit-scrollbar,
+#pj-pasta-edit-box::-webkit-scrollbar
+{
+	width: 8px;
+}
+
+/* Track */
+.pj-storage-container::-webkit-scrollbar-track,
+#pj-preview-container::-webkit-scrollbar-track,
+#pj-pasta-edit-box::-webkit-scrollbar-track
+#pj-settings-container::-webkit-scrollbar-track
+{
+	background: #f1f1f1;
+}
+
+/* Handle */
+.pj-storage-container::-webkit-scrollbar-thumb,
+#pj-preview-container::-webkit-scrollbar-thumb,
+#pj-pasta-edit-box::-webkit-scrollbar-thumb
+#pj-settings-container::-webkit-scrollbar-thumb
+{
+	background: #888;
+}
+
+/* Handle on hover */
+.pj-storage-container::-webkit-scrollbar-thumb:hover,
+#pj-preview-container::-webkit-scrollbar-thumb:hover,
+#pj-pasta-edit-box::-webkit-scrollbar-thumb:hover
+#pj-settings-container::-webkit-scrollbar-thumb:hover
+{
+	background: #555;
+}
+
+.pj-bottom-controls-container {
+	flex: 0 1 auto;
+	border-top: 1px dashed #454545;
+	background-color: #ffffff;
+}
+
+.pj-edit-frame {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+#pj-preview-container {
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px;
+
+}
+
+#pj-pasta-edit-box-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+#pj-pasta-edit-box {
+    flex: 1 1 auto;
+    min-width: 100%;
+    max-width: 100%;
+    resize: none;
+    padding: 5px;
+}
+
+.pj-about-frame {
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column;
+}
+
+#pj-about-container {
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+	padding: 10px;
+
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.pj-settings-frame {
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column;
+}
+
+#pj-settings-container {
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+	padding: 10px;
+}
+
+.pj-checkbox-container input[type="checkbox"] {
+	position: relative;
+	top: 2px;
+}
+
+.pj-checkbox-container label {
+	margin-left: 5px;
+}
+
+.pj-setting-subsequent {
+	margin-left: 15px;
+}
+
+button#pj-reload-emotes-button, #pj-reload-emotes-progressbar {
+	margin-top: 2px;
+	resize: none;
+	width: 120px;
+	height: 24px;
+}
+
+#pj-reload-emotes-progressbar .ui-progressbar-value {
+	background-color: #6441a4;
+}
+
+.pj-ui-icon:hover {
+	background-image:url("chrome-extension://__MSG_@@extension_id__/js/lib/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png");
+}
+
+.pj-ui-icon:active {
+	background-image:url("chrome-extension://__MSG_@@extension_id__/js/lib/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png");
+}
+
+/*.ui-progressbar {border: 0}*/
+#pj-reload-emotes-progressbar .ui-progressbar-value, #pj-reload-emotes-progressbar .ui-progressbar-overlay {
+	/*border: 0px;*/
+	/*margin: 0px;*/
+	height: 24px;
+}
+
+.pj-storedelement-container.ui-sortable-helper {
+	border: 1px solid rgb(75, 54, 124);
+}
+
+.pj-storedelement-placeholder {
+	height: 20px;
+	border-top: 1px dotted #454545;
+	background-color: rgba(75, 54, 124, 0.29);
+}
