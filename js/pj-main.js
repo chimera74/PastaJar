@@ -32,11 +32,13 @@ pj.LoadMainFrame = async function () {
     pj.chatInput = $("div.chat-input").find($("textarea"));
     await pj.Settings.LoadSettings();
 
+    let chatOffset = pj.chatInput.offset();
+
     pj.mainFrame.width(pj.Settings.settings[pj.Settings.keys.PJ_SETTING_WIDTH]);
     pj.mainFrame.height(pj.Settings.settings[pj.Settings.keys.PJ_SETTING_HEIGHT]);
     pj.mainFrame.offset({
-        top: pj.Settings.settings[pj.Settings.keys.PJ_SETTING_POS_Y],
-        left: pj.Settings.settings[pj.Settings.keys.PJ_SETTING_POS_X]
+        top: chatOffset.top - pj.Settings.settings[pj.Settings.keys.PJ_SETTING_WIDTH],
+        left: chatOffset.left
     });
 
     pj.storageFrame = $(".pj-storage-frame");
@@ -101,10 +103,9 @@ pj.loadHtml = async function (filename) {
 };
 
 pj.Init = async function () {
-
+    pj.Log("Pasta Jar");
+    pj.Log($(".chat-input__buttons-container") > 0);
     $.initialize(".chat-input__buttons-container", async function () {
-        pj.Log("Pasta Jar");
-
         if (!pj.isChatPresent())
             pj.LogError("Error! Can't find chat window. Aborting.");
         else {
